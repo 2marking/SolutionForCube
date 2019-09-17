@@ -1,0 +1,286 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/color_input_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.leegyowon.solutionforcube.ColorInputFragment">
+
+        <TextView
+            android:id="@+id/instructions"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="큐브 색상을 입력 후, 솔루션 생성을 눌러주세요"
+            android:textColor="@color/textColorPrimary" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/top_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/front_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/back_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/textColorSecondary" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/user_input_field_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/previous_side"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_chevron_left"
+                android:background="#D7F9F6"/>
+
+            <GridLayout
+                android:id="@+id/user_input_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:columnCount="3"
+                android:rowCount="3">
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="0"
+                    android:layout_margin="4dp"
+                    android:layout_row="0"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="1"
+                    android:layout_margin="4dp"
+                    android:layout_row="0"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="2"
+                    android:layout_margin="4dp"
+                    android:layout_row="0"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="0"
+                    android:layout_margin="4dp"
+                    android:layout_row="1"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="1"
+                    android:layout_margin="4dp"
+                    android:layout_row="1"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="2"
+                    android:layout_margin="4dp"
+                    android:layout_row="1"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="0"
+                    android:layout_margin="4dp"
+                    android:layout_row="2"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="1"
+                    android:layout_margin="4dp"
+                    android:layout_row="2"
+                    android:background="@drawable/cube_button_yellow" />
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_column="2"
+                    android:layout_margin="4dp"
+                    android:layout_row="2"
+                    android:background="@drawable/cube_button_yellow" />
+            </GridLayout>
+
+            <ImageButton
+                android:id="@+id/next_side"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_chevron_right"
+                android:background="#D7F9F6"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rotations"
+            android:layout_below="@id/user_input_field_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageButton
+                android:id="@+id/rotate_left"
+                android:background="#D7F9F6"
+                android:src="@drawable/ic_rotate_left_black_24dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="2dp"/>
+
+            <ImageButton
+                android:id="@+id/rotate_right"
+                android:background="#D7F9F6"
+                android:src="@drawable/ic_rotate_right_black_24dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/palette_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rotations"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="색상 선택"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="16sp" />
+
+        <GridLayout
+            android:id="@+id/palette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/palette_indicator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:columnCount="3"
+            android:rowCount="2">
+
+            <Button
+                android:id="@+id/select_blue"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_column="0"
+                android:layout_margin="8dp"
+                android:layout_row="0"
+                android:background="@drawable/cube_button_blue" />
+
+            <Button
+                android:id="@+id/select_green"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_column="1"
+                android:layout_margin="8dp"
+                android:layout_row="0"
+                android:background="@drawable/cube_button_green" />
+
+            <Button
+                android:id="@+id/select_orange"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_column="2"
+                android:layout_margin="8dp"
+                android:layout_row="0"
+                android:background="@drawable/cube_button_orange" />
+
+            <Button
+                android:id="@+id/select_red"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_column="0"
+                android:layout_margin="8dp"
+                android:layout_row="1"
+                android:background="@drawable/cube_button_red" />
+
+            <Button
+                android:id="@+id/select_white"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_column="1"
+                android:layout_margin="8dp"
+                android:layout_row="1"
+                android:background="@drawable/cube_button_white" />
+
+            <Button
+                android:id="@+id/select_yellow"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_column="2"
+                android:layout_margin="8dp"
+                android:layout_row="1"
+                android:background="@drawable/cube_button_yellow" />
+        </GridLayout>
+
+        <Button
+            android:id="@+id/generate_solution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/palette"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="16dp"
+            android:background="#D7F9F6"
+            android:text="솔루션 생성" />
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
+
